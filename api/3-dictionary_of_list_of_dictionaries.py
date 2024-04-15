@@ -1,27 +1,19 @@
 #!/usr/bin/python3
-"""Script to use a REST API, returns information about
-all tasks from all employees and export in JSON"""
+"""import"""
 import json
-import requests # type: ignore
-
+import requests
 
 if __name__ == "__main__":
-    API_URL = "https://jsonplaceholder.typicode.com"
+    URL = "https://jsonplaceholder.typicode.com"
 
-    users = requests.get(f"{API_URL}/users").json()
-
-    dict_users_tasks = {}
+    users = requests.get(f"{URL}/users").json()
+    dic_user = {}
     for user in users:
-        tasks = requests.get(f"{API_URL}/users/{user['id']}/todos").json()
-
-        dict_users_tasks[user["id"]] = []
+        tasks = requests.get(f"{URL}/users/{user['id']}/todos").json()
+        dic_user[user["id"]] = []
         for task in tasks:
-            task_dict = {
-                "username": user["username"],
-                "task": task["title"],
-                "completed": task["completed"]
-            }
-            dict_users_tasks[user["id"]].append(task_dict)
-
+            dic_task = {"task": task["title"], "completed": task["completed"],
+                        "username": user["username"]}
+            dic_user[user["id"]].append(dic_task)
     with open("todo_all_employees.json", "w") as file:
-        json.dump(dict_users_tasks, file)
+        json.dump(dic_user, file)
