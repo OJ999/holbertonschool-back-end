@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """import"""
 import csv
-import requests
+import requests # type: ignore
 import sys
 
 if __name__ == "__main__":

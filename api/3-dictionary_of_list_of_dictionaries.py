@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """import"""
 import json
-import requests
+import requests # type: ignore
 
 if __name__ == "__main__":
     URL = "https://jsonplaceholder.typicode.com"
