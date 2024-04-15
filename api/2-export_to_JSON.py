@@ -2,7 +2,7 @@
 """Script to use a REST API for a given employee ID, returns
 information about his/her TODO list progress and export in JSON"""
 import json
-import requests
+import requests # type: ignore
 import sys
 
 

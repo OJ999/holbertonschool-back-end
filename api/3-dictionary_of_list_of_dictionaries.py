@@ -2,7 +2,7 @@
 """Script to use a REST API, returns information about
 all tasks from all employees and export in JSON"""
 import json
-import requests
+import requests # type: ignore
 
 
 if __name__ == "__main__":
