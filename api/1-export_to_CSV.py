@@ -20,3 +20,4 @@ if __name__ == '__main__':
         for t in req.json():
             writer.writerow([id, u,
                             t.get("completed"), t.get("title")])
+            
